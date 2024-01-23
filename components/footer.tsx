@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="z-10 flex h-24 flex-col items-center justify-center bg-zinc-950">
       <div className=" border-t border-zinc-700" />
-      <p className="text-sm text-[#A1A1AA]">
+      <p className="text-sm text-[#A1A1AA] sm:p-2 p-10">
         Built by Łukasz Surma. The source code is available on{" "}
         <a
           className="text-[#A1A1AA] hover:text-white underline"
@@ -11,7 +11,6 @@ export default function Footer() {
         >
           GitHub
         </a>
-        .
       </p>
     </footer>
   );

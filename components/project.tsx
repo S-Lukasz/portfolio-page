@@ -26,7 +26,7 @@ export default function Project({
   isFirst,
 }: IProject) {
   return (
-    <div className="flex flex-col w-2/5 rounded-md text-slate-50 ">
+    <div className="flex flex-col w-full sm:p-1 p-4 sm:w-2/5 rounded-md text-slate-50 ">
       <div className="flex flex-col text-left">
         <div
           className={
@@ -35,11 +35,11 @@ export default function Project({
         />
         <p className="text-xl">{name}</p>
         <p className="pb-2 font-normal  text-[#A1A1AA] text-lg">{desc}</p>
-        <div className=" w-1/3 flex border-b border-zinc-600 gap-2 py-2">
+        <div className="w-2/3 sm:w-1/3 flex border-b border-zinc-600 gap-2 py-2">
           <a
             target="_blank"
             href="https://shop-lukaszsurma.vercel.app/"
-            className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4
+            className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4 duration-300 ease-out
               whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
           >
@@ -69,8 +69,8 @@ export default function Project({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="bg-zinc-950 hover:bg-zinc-800" />
-            <CarouselNext className="bg-zinc-950 hover:bg-zinc-800" />
+            {/* <CarouselPrevious className="bg-zinc-950 hover:bg-zinc-800" />
+            <CarouselNext className="bg-zinc-950 hover:bg-zinc-800" /> */}
           </Carousel>
         </div>
       </div>
