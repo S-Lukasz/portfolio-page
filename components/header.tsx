@@ -119,13 +119,6 @@ export default function Header() {
   }, []);
 
   const header = useMemo(() => {
-    console.log(
-      "header, isMobileView: " +
-        isMobileView +
-        "header, window.innerWidth: " +
-        window.innerWidth
-    );
-
     if (!isMobileView) {
       return (
         <header className="sticky top-0 z-10 flex flex-col bg-zinc-950 shadow-md">
@@ -163,7 +156,7 @@ export default function Header() {
               <a
                 target="_blank"
                 href="https://github.com/S-Lukasz"
-                className="text-slate-300 hover:text-slate-50 inline-flex
+                className="text-[#A1A1AA] hover:text-slate-50 inline-flex
             items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"
               >
@@ -173,7 +166,7 @@ export default function Header() {
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/%C5%82ukasz-surma-71b0a7219/"
-                className="text-slate-300 hover:text-slate-50 inline-flex
+                className="text-[#A1A1AA] hover:text-slate-50 inline-flex
           items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"
               >
