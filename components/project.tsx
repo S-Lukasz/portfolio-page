@@ -12,26 +12,22 @@ import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 
 export interface IProject {
-  isFirst: boolean;
+  index: number;
   name: string;
   desc: string;
   path: string;
   images: string[];
 }
 
-export default function Project({
-  name,
-  desc,
-  path,
-  images,
-  isFirst,
-}: IProject) {
+export default function Project({ name, desc, path, images, index }: IProject) {
   return (
     <div className="flex flex-col w-full sm:p-1 p-4 sm:w-2/5 rounded-md text-slate-50 ">
       <div className="flex flex-col text-left">
         <div
           className={
-            isFirst ? "" : " border-t border-zinc-600 w-full mt-2 mb-8 mx-auto"
+            index === 0
+              ? ""
+              : " border-t border-zinc-600 w-full mt-2 mb-8 mx-auto"
           }
         />
         <p className="text-xl">{name}</p>
