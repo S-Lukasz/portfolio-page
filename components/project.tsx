@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
 
 export interface IProject {
   isFirst: boolean;
@@ -48,7 +49,7 @@ export default function Project({
           <div className=" border-r border-zinc-600"></div>
           <a
             target="_blank"
-            href="https://github.com/S-Lukasz"
+            href={path}
             className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4
               whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
@@ -69,8 +70,8 @@ export default function Project({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            {/* <CarouselPrevious className="bg-zinc-950 hover:bg-zinc-800" />
-            <CarouselNext className="bg-zinc-950 hover:bg-zinc-800" /> */}
+            <CarouselPrevious className="hidden sm:flex bg-zinc-950 hover:bg-zinc-800" />
+            <CarouselNext className="hidden sm:flex bg-zinc-950 hover:bg-zinc-800" />
           </Carousel>
         </div>
       </div>

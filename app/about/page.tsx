@@ -1,6 +1,10 @@
-import Project, { IProject } from "@/components/project";
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import { toast, useToast } from "@/components/ui/use-toast";
 
 export default function Home() {
   return (
@@ -16,8 +20,6 @@ export default function Home() {
           developer in C# language - currently creating games is my side hobby.
         </p>
       </div>
-
-      {/* <div className="border-b border-zinc-600 h-2 w-full" /> */}
 
       <div className="w-full flex flex-col ">
         <p className="text-left font-semibold text-2xl w-full">Skills</p>
@@ -38,9 +40,40 @@ export default function Home() {
         <p className="text-left font-semibold text-2xl w-full">Contact</p>
         <div className="border-b border-zinc-600 h-2 w-full mb-4" />
         <div className="text-left text-xl font-normal text-[#A1A1AA] border border-zinc-600 rounded-md p-4">
-          <ul className="ml-6 list-disc">
-            <li> Phone: 884 648 893</li>
-            <li> E-mail: lukaszsurma73@gmail.com</li>
+          <ul className="flex flex-col gap-2">
+            <li className="flex items-center gap-4">
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText("884 648 893");
+                  toast({
+                    title: "Phone Copied",
+                  });
+                }}
+              >
+                <FontAwesomeIcon
+                  className="text-[#A1A1AA] hover:text-slate-50"
+                  icon={faPhone}
+                />
+              </button>
+
+              <p>884 648 893</p>
+            </li>
+            <li className="flex items-center gap-4">
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText("lukaszsurma73@gmail.com");
+                  toast({
+                    title: "E-mail Copied",
+                  });
+                }}
+              >
+                <FontAwesomeIcon
+                  className="text-[#A1A1AA] hover:text-slate-50"
+                  icon={faEnvelope}
+                />
+              </button>
+              <p>lukaszsurma73@gmail.com</p>
+            </li>
           </ul>
         </div>
       </div>
