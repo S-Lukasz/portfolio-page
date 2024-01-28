@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-body
-{
-    @apply bg-zinc-900;
+body {
+    background-color: #292929;
+}
+
+.clipped-component {
+    clip-path: polygon(66% 0, 101% 0 , 100% 101%, 50% 100%);
+  }
+
+.drop-shadow-clipped {
+    filter: drop-shadow(-5px 0 10px rgba(0, 0, 0, 0.5));
 }

@@ -27,14 +27,14 @@ interface Page {
 }
 
 const PAGES: Page[] = [
-  {
-    name: "Home",
-    path: "/",
-  },
-  {
-    name: "About",
-    path: "/about",
-  },
+  // {
+  //   name: "Home",
+  //   path: "/",
+  // },
+  // {
+  //   name: "About",
+  //   path: "/about",
+  // },
   // {
   //   name: "Page",
   //   path: "/page",
@@ -121,8 +121,8 @@ export default function Header() {
   const header = useMemo(() => {
     if (!isMobileView) {
       return (
-        <header className="sticky top-0 z-10 flex flex-col bg-zinc-950 shadow-md">
-          <p className="text-center text-lg font-semibold text-white absolute w-full h-full pointer-events-none mt-3 ">
+        <header className="sticky top-0 z-10 flex flex-col bg-neutral-950 shadow-md">
+          <p className="text-center text-lg font-semibold text-white absolute w-full h-full pointer-events-none my-2 ">
             Portfolio - Łukasz Surma
           </p>
           <div className="pl-4 ml-6 mb-1 flex items-center text-center text-sm font-bold sm:text-2xl gap-2">
