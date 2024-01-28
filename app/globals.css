@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-    background-color: #292929;
+    background-color: #383838;
+
 }
 
 .clipped-component {

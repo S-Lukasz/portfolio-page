@@ -1,11 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import * as React from "react";
-import {
-  DropdownMenuCheckboxItemProps,
-  DropdownMenuItem,
-} from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,32 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-interface Page {
-  name: string;
-  path: string;
-}
-
-const PAGES: Page[] = [
-  // {
-  //   name: "Home",
-  //   path: "/",
-  // },
-  // {
-  //   name: "About",
-  //   path: "/about",
-  // },
-  // {
-  //   name: "Page",
-  //   path: "/page",
-  // },
-];
-
-type Checked = DropdownMenuCheckboxItemProps["checked"];
-
 export function DropdownMenuCheckboxes() {
-  const router = useRouter();
-  // const [showPanel, setShowPanel] = useState<Checked>();
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -62,18 +33,6 @@ export function DropdownMenuCheckboxes() {
         <DropdownMenuLabel className="text-base text-slate-50">
           Menu
         </DropdownMenuLabel>
-        <DropdownMenuSeparator></DropdownMenuSeparator>
-        {PAGES.map((result, i) => (
-          <DropdownMenuItem
-            className="px-2 py-1.5 text-sm font-semibold text-slate-300 hover:text-slate-50"
-            key={"dropdownKey_" + i}
-            onClick={() => {
-              router.push(result.path);
-            }}
-          >
-            {result.name}
-          </DropdownMenuItem>
-        ))}
         <DropdownMenuSeparator></DropdownMenuSeparator>
         <DropdownMenuItem
           className="px-2 py-1.5 text-sm font-semibold text-slate-300 hover:text-slate-50"
@@ -126,32 +85,6 @@ export default function Header() {
             Portfolio - Łukasz Surma
           </p>
           <div className="pl-4 ml-6 mb-1 flex items-center text-center text-sm font-bold sm:text-2xl gap-2">
-            {PAGES.map((result, i) => (
-              <div
-                key={"pageKey_" + i}
-                className="pr-4 my-2 " //border-r border-zinc-700
-              >
-                <Link
-                  href={result.path}
-                  className={
-                    (result.path == currentPath
-                      ? "text-white "
-                      : "text-slate-300 ") +
-                    " bg-zinc-950  hover:text-slate-50 inline-flex h-6 px-4 py-2 items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"
-                  }
-                >
-                  <p>{result.name}</p>
-                </Link>
-                <div
-                  className={
-                    result.path == currentPath
-                      ? "border-b border-orange-400"
-                      : ""
-                  }
-                />
-              </div>
-            ))}
-
             <div className="my-2 pl-4 mb-1 flex items-center gap-4 ml-auto mr-10">
               <a
                 target="_blank"

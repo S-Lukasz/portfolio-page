@@ -14,19 +14,31 @@ export interface IProject {
   name: string;
   desc: string;
   path: string;
+  page: string;
   images: string[];
 }
 
 interface Prop {
   index: number;
+  className: string;
   project: IProject;
 }
 
-export default function Project({ project, index }: Prop) {
+export default function Project({ project, className, index }: Prop) {
   const isFlipped = useMemo(() => index % 2 !== 0, [index]);
 
   return (
-    <div className="flex flex-col w-full h-full text-slate-50">
+    <div
+      className={
+        className + " flex flex-col w-full h-full text-slate-50 relative"
+      }
+    >
+      <div
+        className={
+          (isFlipped ? "  right-0 " : " ") +
+          " drop-shadow-clipped absolute h-full w-20 bg-neutral-800 z-10 pointer-events-none"
+        }
+      />
       <div
         className={
           (isFlipped ? " justify-end " : " justify-start") +
@@ -38,7 +50,10 @@ export default function Project({ project, index }: Prop) {
             {project.images.map((image, i) => (
               <CarouselItem key={"imageKey_" + i}>
                 <img
-                  className="flex object-cover w-full h-full "
+                  className={
+                    (isFlipped ? "" : "ml-24 ") +
+                    "flex object-cover w-full h-full "
+                  }
                   src={image}
                   alt="projImg"
                 />
@@ -83,7 +98,7 @@ export default function Project({ project, index }: Prop) {
               <div className="w-1/3 flex border-t border-zinc-600 gap-2 py-2">
                 <a
                   target="_blank"
-                  href="https://shop-lukaszsurma.vercel.app/"
+                  href={project.page}
                   className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4 duration-300 ease-out
                 whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
