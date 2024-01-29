@@ -9,14 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { useMemo } from "react";
 import { cn } from "@/lib/utils";
-
-export interface IProject {
-  name: string;
-  desc: string;
-  path: string;
-  page: string;
-  images: string[];
-}
+import { IProject } from "@/app/consts";
 
 interface Prop {
   index: number;
@@ -36,7 +29,7 @@ export default function Project({ project, className, index }: Prop) {
       <div
         className={
           (isFlipped ? "  right-0 " : " ") +
-          " drop-shadow-clipped absolute h-full w-20 bg-neutral-800 z-10 pointer-events-none"
+          " drop-shadow-clipped absolute h-full w-20 bg-neutral-800 z-10 pointer-events-none "
         }
       />
       <div
@@ -60,8 +53,18 @@ export default function Project({ project, className, index }: Prop) {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="z-20 bg-neutral-800 ml-20 hover:bg-orange-300 hover:border-neutral-800" />
-          <CarouselNext className="z-20 bg-neutral-800 mr-20 hover:bg-orange-300 hover:border-neutral-800" />
+          <CarouselPrevious
+            className={
+              (isFlipped ? "ml-24 " : " ml-[72px] ") +
+              " z-20 bg-neutral-800 hover:bg-orange-400 hover:border-neutral-800 duration-300 ease-out transition-all"
+            }
+          />
+          <CarouselNext
+            className={
+              (isFlipped ? "mr-[72px] " : " mr-24 ") +
+              " z-20 bg-neutral-800 hover:bg-orange-400 hover:border-neutral-800 duration-300 ease-out transition-all"
+            }
+          />
         </Carousel>
         <div
           className={cn(
@@ -84,12 +87,12 @@ export default function Project({ project, className, index }: Prop) {
                 }
               />
               <p className="text-2xl font-medium">{project.name}</p>
-              <div className="flex w-full gap-2">
-                <div className="ml-4 w-12 h-1 mt-2 border-b-2 border-orange-400"></div>
+              <div className="flex w-full ">
+                <div className="ml-4 w-10 h-1 mt-2 border-b-2 border-orange-400"></div>
                 <p
                   className={
                     (isFlipped ? " w-1/2 " : " w-3/4 ") +
-                    " pb-2 font-normal  text-[#A1A1AA] text-lg"
+                    " pb-2 font-normal indent-6 text-[#A1A1AA] text-lg"
                   }
                 >
                   {project.desc}
@@ -99,9 +102,8 @@ export default function Project({ project, className, index }: Prop) {
                 <a
                   target="_blank"
                   href={project.page}
-                  className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4 duration-300 ease-out
-                whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4 duration-300 ease-out transition-all
+                  whitespace-nowrap rounded-md text-base font-medium"
                 >
                   Page
                 </a>
@@ -109,9 +111,9 @@ export default function Project({ project, className, index }: Prop) {
                 <a
                   target="_blank"
                   href={project.path}
-                  className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4
-                whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4 duration-300 ease-out transition-all
+                whitespace-nowrap rounded-md text-base font-medium
+                "
                 >
                   Code
                 </a>

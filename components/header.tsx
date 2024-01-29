@@ -80,7 +80,7 @@ export default function Header() {
   const header = useMemo(() => {
     if (!isMobileView) {
       return (
-        <header className="sticky top-0 z-10 flex flex-col bg-neutral-950 shadow-md">
+        <header className="sticky top-0 z-30 flex flex-col bg-neutral-950 shadow-md">
           <p className="text-center text-lg font-semibold text-white absolute w-full h-full pointer-events-none my-2 ">
             Portfolio - Łukasz Surma
           </p>
@@ -89,17 +89,17 @@ export default function Header() {
               <a
                 target="_blank"
                 href="https://github.com/S-Lukasz"
-                className="text-[#A1A1AA] hover:text-slate-50 inline-flex
+                className="text-[#babac2] hover:text-slate-50 inline-flex
             items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"
               >
                 <FontAwesomeIcon className="text-xl" icon={faGithub} />
               </a>
-              <div className="border-r border-zinc-600 h-6 " />
+              <div className="border-r border-zinc-400 h-6 " />
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/%C5%82ukasz-surma-71b0a7219/"
-                className="text-[#A1A1AA] hover:text-slate-50 inline-flex
+                className="text-[#babac2] hover:text-slate-50 inline-flex
           items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"
               >
