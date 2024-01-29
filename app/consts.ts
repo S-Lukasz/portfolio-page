@@ -40,7 +40,7 @@ export const SKILLS: ISkill[] = [
   },
   {
     name: "REST API",
-    path: "https://docs.strapi.io/dev-docs/api/rest",
+    path: "https://en.wikipedia.org/wiki/API",
     icon: "/skills/api_icon.png",
   },
   {
