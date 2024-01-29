@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { IProject } from "@/app/consts";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +9,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useMemo } from "react";
-import { IProject } from "./project";
 
 interface Prop {
   index: number;
