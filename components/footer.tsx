@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="z-10 flex flex-col items-center justify-center border-t border-zinc-600 bg-neutral-950">
-      <div className=" border-t border-zinc-600" />
+    <footer className="z-10 flex flex-col items-center justify-center border-t border-[#323e52] bg-[#070c1d]">
+      <div className=" border-t border-[#323e52]" />
       <p className="text-sm text-[#A1A1AA] p-6 text-center">
         Built by Łukasz Surma. The source code is available on{" "}
         <a

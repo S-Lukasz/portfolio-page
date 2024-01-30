@@ -11,30 +11,34 @@ import { PROJECTS, SKILLS } from "./consts";
 export default function Home() {
   return (
     <div className="w-full h-full  flex items-center text-center text-sm font-bold sm:text-2xl flex-col">
-      <div className="w-full bg-[#363636] text-left pt-10 px-10 flex  flex-col pb-20">
+      <div className="w-full bg-[#0f172a] text-left pt-10 px-6 sm:px-10 flex flex-col pb-20">
         <p className=" text-zinc-50 font-medium text-xl sm:text-3xl">About</p>
         <div className="flex items-start">
-          <div className="border-b-2 w-14 ml-2 mt-3 shadow-md border-orange-400"></div>
-          <div className="flex flex-col font-normal text-base sm:text-xl w-3/4 sm:w-2/3 text-zinc-300 gap-4">
+          <div className="border-b-2 w-14 ml-2 mt-3 shadow-md border-[#00dd82]"></div>
+          <div className="flex flex-col font-normal text-light sm:text-xl w-full sm:w-2/3 text-[#cad2df] gap-4">
             <span className="indent-6">
               Welcome, My name is Łukasz and I&apos;m specializing in creating
               websites as a frontend developer. I&apos;ve got 2 years of
-              commercial experience as a GUI game developer in C# language, -
-              currently creating games is my side hobby and I&apos;m looking
-              forward to gaining experience in creating websites alongside
-              specialist.
+              commercial experience as a UI developer in C# language, -
+              currently I&apos;m looking forward to gain more experience as a
+              frontend developer in creating websites.
+            </span>
+            <span className="indent-6">
+              I believe that communication with co-workers is crucial during
+              project development. Commitment and ability to cooperate teamwork
+              leads to success.
             </span>
           </div>
         </div>
       </div>
 
-      <div className="w-full gap-4 bg-neutral-800 pb-8 text-left flex text-white flex-col shadow-md items-center ">
+      <div className="w-full gap-4 bg-[#1a2333] pb-8 text-left flex text-white flex-col shadow-md items-center ">
         <div className="flex w-full items-center m-auto -mt-4">
-          <div className="border-b-2 w-full border-orange-300 shadow-md"></div>
-          <p className="text-center w-96 font-medium text-xl sm:text-2xl bg-[#363636] px-4 sm:px-8 rounded-md border-x-2 border-orange-300 z-0 shadow-md ">
+          <div className="border-b w-full border-[#00dd82] shadow-md"></div>
+          <p className="text-center w-96 text-[#00dd82] font-light text-xl sm:text-2xl bg-[#0f172a] px-4 sm:px-8 rounded-md border-x-2 border-[#00dd82] z-0 shadow-md ">
             Skills
           </p>
-          <div className="border-b-2 w-full border-orange-300 shadow-md"></div>
+          <div className="border-b w-full border-[#00dd82] shadow-md"></div>
         </div>
 
         <div className="grid grid-cols-4 gap-4 mt-2 sm:pb-4 sm:mt-8">
@@ -43,11 +47,13 @@ export default function Home() {
               <a
                 href={result.path}
                 target="_blank"
-                className="sm:w-36 sm:h-36 w-14 h-14 flex flex-col shadow-md font-light text-center duration-300 ease-out transition-all  hover:text-orange-400 items-center hover:bg-[#4d4b4b] text-lg bg-[#363636] rounded-md"
+                className="sm:w-36 sm:h-36 w-14 h-14 flex flex-col shadow-md hover:shadow-xl
+                font-light text-center duration-300 ease-out transition-all hover:text-[#00dd82] items-center
+                 hover:bg-[#070c1d] text-lg bg-[#0f172a] rounded-md"
                 key={"skillKey" + i}
               >
                 <img
-                  className="sm:w-20 sm:h-20 w-8 h-8 mt-3 sm:mt-4 "
+                  className="sm:w-20 sm:h-20 w-8 h-8 mt-3 sm:mt-5 hover:scale-105 duration-300 ease-out transition-all"
                   src={result.icon}
                   alt={result.name}
                 />
@@ -60,11 +66,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col sm:gap-14 pb-20 sm:mt-10 bg-[#383838]">
+      <div className="flex flex-col sm:gap-14 pb-20 sm:mt-10 ">
         <div className="flex h-full sm:text-left text-slate-50 text-2xl flex-col mt-10 sm:px-10">
           <p className="font-medium text-xl sm:text-3xl">Projects</p>
           <div className="flex sm:justify-start justify-center sm:items-start gap-4">
-            <div className="sm:border-b-2 border-b w-full sm:w-1/12 sm:ml-2 mt-3 border-orange-300 sm:border-orange-400"></div>
+            <div className="sm:border-b-2 border-b w-full sm:w-1/12 sm:ml-2 mt-3 border-[#00dd82] sm:border-[#00dd82]"></div>
           </div>
         </div>
         {PROJECTS.map((result, i) => (
@@ -85,16 +91,16 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="w-full gap-4 bg-neutral-800 pb-10 text-left flex text-white flex-col shadow-md items-center sm:mt-10 relative">
+      <div className="w-full gap-4 bg-[#1e293b] pb-10 text-left flex text-white flex-col shadow-md items-center sm:mt-10 relative">
         <div className="flex w-full items-center m-auto -mt-4">
-          <div className="border-b-2 w-full border-orange-300 shadow-md"></div>
-          <p className="text-center w-96 font-medium text-lg sm:text-2xl whitespace-nowrap px-4 sm:px-8 bg-[#363636] border-x-2 border-orange-300 z-0 rounded-md shadow-md">
+          <div className="border-b w-full border-[#00dd82] shadow-md"></div>
+          <p className="text-center text-[#00dd82] w-96 font-light text-lg sm:text-2xl whitespace-nowrap px-4 sm:px-8 bg-[#0f172a] border-x-2 border-[#00dd82] z-0 rounded-md shadow-md">
             Contact Me
           </p>
-          <div className="border-b-2 w-full border-orange-300 shadow-md"></div>
+          <div className="border-b w-full border-[#00dd82] shadow-md"></div>
         </div>
 
-        <div className="flex gap-4 mt-8 flex-col items-center text-[#babac2] ">
+        <div className="flex gap-4 mt-6 flex-col items-center text-[#babac2] ">
           <div className="flex gap-4">
             <button
               onClick={() => {
@@ -103,7 +109,7 @@ export default function Home() {
                   title: "Phone number copied",
                 });
               }}
-              className="flex flex-col shadow-md py-1 font-light duration-300 ease-out transition-all text-left hover:text-orange-400 items-start hover:bg-[#292929] text-lg bg-[#363636] rounded-md"
+              className="flex flex-col hover:shadow-xl shadow-md py-1 font-light duration-300 ease-out transition-all text-left  hover:text-[#00dd82] items-start hover:bg-[#070c1d] text-lg bg-[#0f172a] rounded-md"
             >
               <div className="flex items-center gap-4 px-4 text-center">
                 <FontAwesomeIcon icon={faPhone} />
@@ -115,14 +121,14 @@ export default function Home() {
               <a
                 target="_blank"
                 href="https://github.com/S-Lukasz"
-                className="hover:text-orange-400 items-start duration-300 ease-out transition-all hover:bg-[#292929] text-xl bg-[#363636] rounded-md px-2 py-1"
+                className=" hover:text-[#00dd82] hover:shadow-xl items-start duration-300 ease-out transition-all hover:bg-[#070c1d] text-xl bg-[#0f172a] rounded-md px-2 py-1"
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/%C5%82ukasz-surma-71b0a7219/"
-                className="hover:text-orange-400 items-start duration-300 ease-out transition-all hover:bg-[#292929] text-xl bg-[#363636] rounded-md px-2 py-1"
+                className=" hover:text-[#00dd82] hover:shadow-xl items-start duration-300 ease-out transition-all hover:bg-[#070c1d] text-xl bg-[#0f172a] rounded-md px-2 py-1"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
@@ -136,9 +142,9 @@ export default function Home() {
                 title: "E-mail copied",
               });
             }}
-            className="flex flex-col shadow-md py-1 font-light text-left duration-300 ease-out transition-all hover:text-orange-400 items-start hover:bg-[#292929] text-lg bg-[#363636] rounded-md"
+            className="flex flex-col hover:shadow-xl shadow-md py-1 font-light text-left duration-300 ease-out transition-all  hover:text-[#00dd82] items-start hover:bg-[#070c1d] text-lg bg-[#0f172a] rounded-md"
           >
-            <div className="flex items-center gap-4 px-4 text-center">
+            <div className="flex hover:shadow-xl items-center gap-4 px-4 text-center">
               <FontAwesomeIcon icon={faEnvelope} />
 
               <p>lukaszsurma73@gmail.com</p>

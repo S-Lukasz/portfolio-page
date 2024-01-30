@@ -23,7 +23,7 @@ export default function ProjectMobile({ className, project, index }: Prop) {
     <div
       className={
         className +
-        " flex flex-col w-full h-full text-slate-50 relative bg-neutral-800"
+        " flex flex-col w-full h-full text-slate-50 relative bg-[#1a2333]"
       }
     >
       <div
@@ -35,40 +35,38 @@ export default function ProjectMobile({ className, project, index }: Prop) {
           className={
             index === 0
               ? ""
-              : " border-t border-zinc-600 w-full mt-2 mb-8 mx-auto"
+              : " border-t border-[#3f4c63] w-full mt-2 mb-8 mx-auto"
           }
         />
         <p className="text-2xl font-medium">{project.name}</p>
         <div className="flex w-full gap-2">
-          <div className="ml-4 w-12 h-1 mt-2 border-b-2 border-orange-400"></div>
-          <p className={" pb-2 pr-2 w-4/5 font-normal  text-[#A1A1AA] text-lg"}>
+          <div className="ml-4 w-12 h-1 mt-2 border-b-2 border-[#00dd82]"></div>
+          <p className={" pb-2 pr-2 w-4/5 font-normal text-[#cad2df] text-lg"}>
             {project.desc}
           </p>
         </div>
-        <div className="w-full flex border-t border-zinc-600 gap-2 pt-2">
+        <div className="w-full flex border-t border-[#3f4c63] gap-2 pt-2">
           <a
             target="_blank"
             href={project.page}
-            className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4 duration-300 ease-out
-                  whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+            className="text-[#00dd82] hover:text-white  inline-flex text-center px-4 duration-300 ease-out transition-all
+            whitespace-nowrap rounded-md text-base font-medium text-shadow underline"
           >
             Page
           </a>
-          <div className=" border-r border-zinc-600"></div>
+          <div className=" border-r border-[#3f4c63]"></div>
           <a
             target="_blank"
             href={project.path}
-            className="text-slate-200 hover:text-orange-400 inline-flex text-center px-4
-                  whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+            className="text-[#00dd82] hover:text-white  inline-flex text-center px-4 duration-300 ease-out transition-all
+            whitespace-nowrap rounded-md text-base font-medium text-shadow underline"
           >
             Code
           </a>
         </div>
       </div>
 
-      <Carousel className="w-full shadow-lg bg-neutral-800 p-4">
+      <Carousel className="w-full shadow-lg  p-4">
         <CarouselContent className="h-full">
           {project.images.map((image, i) => (
             <CarouselItem key={"imageKey_" + i}>

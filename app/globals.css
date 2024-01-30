@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-color: #383838;
+    background-color: #0f172a;
 
 }
 
@@ -13,4 +13,14 @@ body {
 
 .drop-shadow-clipped {
     filter: drop-shadow(-5px 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.text-shadow
+{
+    text-shadow: black 0px 0 0px;
+}
+
+.text-shadow:hover
+{
+    text-shadow: black 1px 0 10px;
 }

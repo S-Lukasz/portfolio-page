@@ -21,14 +21,14 @@ export function DropdownMenuCheckboxes() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="text-slate-300 hover:text-slate-50  inline-flex h-6 px-4 py-2 
+          className="text-slate-300 hover:text-slate-50 bg-[#070c1d] inline-flex h-6 px-4 py-2 
           items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"
         >
           <FontAwesomeIcon className="h-5 w-5" icon={faBars} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="w-56 bg-[#070c1d]">
         <DropdownMenuLabel className="text-base text-slate-50">
           Menu
         </DropdownMenuLabel>
@@ -79,7 +79,7 @@ export default function Header() {
   const header = useMemo(() => {
     if (!isMobileView) {
       return (
-        <header className="sticky top-0 z-30 flex flex-col bg-neutral-950 shadow-md">
+        <header className="sticky top-0 z-30 flex flex-col bg-[#070c1d] shadow-md">
           <p className="text-center text-lg font-semibold text-white absolute w-full h-full pointer-events-none my-2 ">
             Portfolio - Łukasz Surma
           </p>
@@ -88,17 +88,17 @@ export default function Header() {
               <a
                 target="_blank"
                 href="https://github.com/S-Lukasz"
-                className="text-[#babac2] hover:text-slate-50 inline-flex
+                className="text-[#cad2df] hover:text-slate-50 inline-flex
             items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"
               >
                 <FontAwesomeIcon className="text-xl" icon={faGithub} />
               </a>
-              <div className="border-r border-zinc-400 h-6 " />
+              <div className="border-r border-[#323e52] h-6 " />
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/%C5%82ukasz-surma-71b0a7219/"
-                className="text-[#babac2] hover:text-slate-50 inline-flex
+                className="text-[#cad2df] hover:text-slate-50 inline-flex
           items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-white transition-colors 
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"
               >
@@ -106,19 +106,19 @@ export default function Header() {
               </a>
             </div>
           </div>
-          <div className=" border-b border-zinc-700"> </div>
+          <div className=" border-b border-[#323e52]"> </div>
         </header>
       );
     } else
       return (
-        <header className="sticky top-0 z-10 flex bg-zinc-950 shadow-md py-4">
+        <header className="sticky top-0 z-10 flex bg-[#070c1d] shadow-md py-4">
           <p className="text-center text-lg font-semibold text-white absolute w-full pointer-events-none mb-2">
             Portfolio - Łukasz Surma
           </p>
           <div className="flex items-center text-center font-bold text-sm ">
             {DropdownMenuCheckboxes()}
           </div>
-          <div className="border-r border-zinc-600" />
+          <div className="border-r border-[#323e52]" />
         </header>
       );
   }, [currentPath, isMobileView]);
