@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import { IProject } from "@/app/consts";
 import {
   Carousel,
