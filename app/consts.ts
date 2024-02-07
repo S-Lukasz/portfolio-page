@@ -57,7 +57,7 @@ export const SKILLS: ISkill[] = [
 export const PROJECTS: IProject[] = [
   {
     name: "Board",
-    desc: "Set up your board and assign tedious tasks to manage your project. Website was created with the use of local storage, to save and load all user data.",
+    desc: "Set up your kanban board and assign tedious tasks to manage your project. Website was created with the use of local storage, to save and load all user data.",
     path: "https://github.com/S-Lukasz/todo-app",
     page: "https://todo-lukaszsurma.vercel.app/",
     images: [

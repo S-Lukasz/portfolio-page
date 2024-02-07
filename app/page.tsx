@@ -17,16 +17,24 @@ export default function Home() {
           <div className="border-b-2 w-14 ml-2 mt-3 shadow-md border-[#00dd82]"></div>
           <div className="flex flex-col font-normal text-light sm:text-xl w-full sm:w-2/3 text-[#cad2df] gap-4">
             <span className="indent-6">
-              Welcome, My name is Łukasz and I&apos;m specializing in creating
-              websites as a frontend developer. I&apos;ve got 2 years of
-              commercial experience as a UI developer in C# language, -
-              currently I&apos;m looking forward to gain more experience as a
-              frontend developer in creating websites.
+              Welcome, My name is Łukasz and I specialize in creating websites
+              as a frontend developer. I&apos;ve got 2 years of commercial
+              experience as a C# developer w ith last few months in Java Script
+              with the use of react framework, - currently I&apos;m looking
+              forward to gain more experience as a frontend developer in
+              creating websites.
             </span>
             <span className="indent-6">
-              I believe that communication with co-workers is crucial during
-              project development. Commitment and ability to cooperate teamwork
-              leads to success.
+              Learning new things is always fun for me and not a problem,
+              because I believe that people constantly have the opportunity to
+              develop themselves regardless of their position, they just have to
+              go forward, because staying in the same place is equal to going
+              backward.
+            </span>
+            <span className="indent-6">
+              The other very important factor in work is communication with
+              co-workers I think that this is crucial during project development
+              and the ability to cooperate in a team leads to success.
             </span>
           </div>
         </div>
