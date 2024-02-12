@@ -7,12 +7,55 @@ import {
 } from "@/components/ui/carousel";
 import { useMemo } from "react";
 import { cn } from "@/lib/utils";
-import { IProject } from "@/app/consts";
+import { IProject, SKILLS, SkillType } from "@/app/consts";
 
 interface Prop {
   index: number;
   className: string;
   project: IProject;
+}
+
+interface SkillProp {
+  show: boolean;
+  isFlipped: boolean;
+  skills: SkillType[];
+}
+
+function ProjectSkills({ show, isFlipped, skills }: SkillProp) {
+  const getSkill = (type: SkillType) => {
+    return SKILLS.find((skill) => skill.type === type);
+  };
+
+  if (!show) return <></>;
+
+  return (
+    <div
+      className={
+        (isFlipped
+          ? " -scale-100 ml-auto pl-60 w-1/2 "
+          : " w-1/2 ml-auto pl-20 ") + " flex z-20 gap-4  pb-4"
+      }
+    >
+      {skills.map((result, i) => (
+        <>
+          <a
+            href={getSkill(result)?.path}
+            target="_blank"
+            className="cursor-pointer border border-[#00dd8175] hover:border-[#00dd81bd] 
+                     rounded-md hover:bg-[#070c1d] text-lg bg-[#0f172a] duration-300 ease-out transition-all 
+                      pointer-events-auto w-14 h-14 flex flex-col items-center justify-center"
+            key={"skillKey" + i}
+          >
+            <img
+              className="w-8 h-8 hover:scale-105 duration-300 ease-out transition-all"
+              src={getSkill(result)?.icon}
+              alt={"skill_" + i + "_icon"}
+            />
+          </a>
+        </>
+      ))}
+    </div>
+  );
 }
 
 export default function Project({ project, className, index }: Prop) {
@@ -70,7 +113,12 @@ export default function Project({ project, className, index }: Prop) {
             "drop-shadow-clipped flex absolute w-full h-full pointer-events-none"
           )}
         >
-          <div className="clipped-component bg-[#1e293b] w-full h-full flex absolute">
+          <div className="clipped-component bg-[#1e293b] w-full h-full flex flex-col absolute">
+            <ProjectSkills
+              show={isFlipped}
+              isFlipped={isFlipped}
+              skills={project.skills}
+            ></ProjectSkills>
             <div
               className={
                 (isFlipped ? " -scale-100 p-8 w-2/3 " : " w-1/3 ") +
@@ -85,7 +133,7 @@ export default function Project({ project, className, index }: Prop) {
                 <div className="ml-4 w-10 h-1 mt-2 border-b-2 border-[#00dd82]"></div>
                 <p
                   className={
-                    (isFlipped ? " w-1/2 " : " w-3/4 ") +
+                    (isFlipped ? " w-1/2 " : " w-4/5 ") +
                     " pb-2 font-normal indent-6 text-[#cad2df] text-lg"
                   }
                 >
@@ -113,6 +161,11 @@ export default function Project({ project, className, index }: Prop) {
                 </a>
               </div>
             </div>
+            <ProjectSkills
+              show={!isFlipped}
+              isFlipped={isFlipped}
+              skills={project.skills}
+            ></ProjectSkills>
           </div>
         </div>
       </div>

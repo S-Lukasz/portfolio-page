@@ -83,7 +83,7 @@ export default function Header() {
           <p className="text-center text-lg font-semibold text-white absolute w-full h-full pointer-events-none my-2 ">
             Portfolio - Łukasz Surma
           </p>
-          <div className="pl-4 ml-6 mb-1 flex items-center text-center text-sm font-bold sm:text-2xl gap-2">
+          <div className="pl-4 ml-6 mb-1 flex items-center text-center text-sm font-bold xl:text-2xl gap-2">
             <div className="my-2 pl-4 mb-1 flex items-center gap-4 ml-auto mr-10">
               <a
                 target="_blank"

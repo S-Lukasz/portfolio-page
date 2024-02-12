@@ -1,4 +1,4 @@
-import { IProject } from "@/app/consts";
+import { IProject, PROJECTS, SKILLS, SkillType } from "@/app/consts";
 import {
   Carousel,
   CarouselContent,
@@ -17,11 +17,16 @@ interface Prop {
 export default function ProjectMobile({ className, project, index }: Prop) {
   const isFlipped = useMemo(() => index % 2 !== 0, [index]);
 
+  const getSkill = (type: SkillType) => {
+    return SKILLS.find((skill) => skill.type === type);
+  };
+
   return (
     <div
       className={
         className +
-        " flex flex-col w-full h-full text-slate-50 relative bg-[#1a2333]"
+        (index === PROJECTS.length - 1 ? " pb-6 shadow-md" : "  ") +
+        " flex flex-col w-full h-full text-slate-50 relative bg-[#1a2333]  "
       }
     >
       <div
@@ -36,10 +41,12 @@ export default function ProjectMobile({ className, project, index }: Prop) {
               : " border-t border-[#3f4c63] w-full mt-2 mb-8 mx-auto"
           }
         />
-        <p className="text-2xl font-medium">{project.name}</p>
+        <p className="text-xl font-medium">{project.name}</p>
         <div className="flex w-full gap-2">
-          <div className="ml-4 w-12 h-1 mt-2 border-b-2 border-[#00dd82]"></div>
-          <p className={" pb-2 pr-2 w-4/5 font-normal text-[#cad2df] text-lg"}>
+          <div className="ml-4 w-6 h-1 mt-2 border-b-2 border-[#00dd82]"></div>
+          <p
+            className={" pb-2 pr-2 w-full font-normal text-base text-[#cad2df]"}
+          >
             {project.desc}
           </p>
         </div>
@@ -64,12 +71,14 @@ export default function ProjectMobile({ className, project, index }: Prop) {
         </div>
       </div>
 
-      <Carousel className="w-full shadow-lg  p-4">
+      <Carousel className="w-full  p-4 ">
         <CarouselContent className="h-full">
           {project.images.map((image, i) => (
             <CarouselItem key={"imageKey_" + i}>
               <img
-                className={"flex w-96 object-cover h-full rounded-md"}
+                className={
+                  "flex w-[40rem] m-auto pl-4 object-cover h-full rounded-md"
+                }
                 src={image}
                 alt="projImg"
               />
@@ -79,6 +88,27 @@ export default function ProjectMobile({ className, project, index }: Prop) {
         <CarouselPrevious className="ml-20 w-5 h-5 bg-neutral-600 hover:bg-orange-300 hover:border-neutral-800" />
         <CarouselNext className="mr-20 w-5 h-5 bg-neutral-600  hover:bg-orange-300 hover:border-neutral-800" />
       </Carousel>
+
+      <div className={"w-full justify-center mt-4 flex gap-4"}>
+        {project.skills.map((result, i) => (
+          <>
+            <a
+              href={getSkill(result)?.path}
+              target="_blank"
+              className="cursor-pointer border border-[#00dd8175] hover:border-[#00dd81bd] 
+                     rounded-md hover:bg-[#070c1d] text-lg bg-[#0f172a] duration-300 ease-out transition-all 
+                      pointer-events-auto w-10 h-10 flex flex-col items-center justify-center"
+              key={"skillKey" + i}
+            >
+              <img
+                className="w-6 h-6 hover:scale-105 duration-300 ease-out transition-all"
+                src={getSkill(result)?.icon}
+                alt={"skill_" + i + "_icon"}
+              />
+            </a>
+          </>
+        ))}
+      </div>
     </div>
   );
 }
