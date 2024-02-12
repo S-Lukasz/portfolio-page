@@ -32,8 +32,8 @@ function ProjectSkills({ show, isFlipped, skills }: SkillProp) {
     <div
       className={
         (isFlipped
-          ? " -scale-100 ml-auto pl-60 w-1/2 "
-          : " w-1/2 ml-auto pl-20 ") + " flex z-20 gap-4  pb-4"
+          ? " -scale-100 ml-auto pr-6 w-2/6 justify-end "
+          : " w-1/2 ml-auto pl-20 ") + " flex z-20 gap-4 pb-4"
       }
     >
       {skills.map((result, i) => (
@@ -134,7 +134,7 @@ export default function Project({ project, className, index }: Prop) {
                 <p
                   className={
                     (isFlipped ? " w-1/2 " : " w-4/5 ") +
-                    " pb-2 font-normal indent-6 text-[#cad2df] text-lg"
+                    " pb-2 font-normal indent-6 text-[#cad2df] text-base 2xl:text-lg "
                   }
                 >
                   {project.desc}
