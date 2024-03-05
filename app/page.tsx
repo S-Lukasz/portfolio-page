@@ -19,10 +19,10 @@ export default function Home() {
             <span className="indent-6">
               Welcome, My name is Łukasz and I specialize in creating websites
               as a frontend developer. I&apos;ve got 2 years of commercial
-              experience as a C# developer with last few months in Java Script
-              with the use of react framework, - currently I&apos;m looking
-              forward to gain more experience as a frontend developer in
-              creating websites.
+              experience as a C# developer and 1 year of experience as Java
+              Script developer with the use of react framework, - currently
+              I&apos;m looking forward to gain more experience as a frontend
+              developer in creating websites.
             </span>
             <span className="indent-6">
               Learning new things is always fun for me and not a problem,

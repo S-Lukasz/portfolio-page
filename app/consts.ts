@@ -92,6 +92,26 @@ export const SKILLS: ISkill[] = [
 
 export const PROJECTS: IProject[] = [
   {
+    name: "Social Media",
+    desc: "Dynamic web application that allows interactions among people in which they create, share, and/or exchange information and ideas in virtual communities and networks.",
+    path: "https://github.com/S-Lukasz/social-app",
+    page: "https://social-app-ls.vercel.app/",
+    skills: [
+      SkillType.JavaScript,
+      SkillType.Tailwind,
+      SkillType.React,
+      SkillType.Next,
+    ],
+    images: [
+      "/projects/social_screen_1.png",
+      "/projects/social_screen_2.png",
+      "/projects/social_screen_3.png",
+      "/projects/social_screen_4.png",
+      "/projects/social_screen_5.png",
+      "/projects/social_screen_6.png",
+    ],
+  },
+  {
     name: "Training Tracker",
     desc: "Dynamic web application designed to manage fitness data. Built with the use of Angular framework, this website allows user to organize and track their training data. With registration and login system, users can create personalized workouts, complete with exercises that include weight selection, targeted muscle groups, and customizable sets with rep counts. The entire user experience is backed by a secure Supabase data.",
     path: "https://github.com/S-Lukasz/training-tracker",
@@ -114,7 +134,6 @@ export const PROJECTS: IProject[] = [
       "/projects/training_scr_1.png",
     ],
   },
-
   {
     name: "Web Shop",
     desc: "Project of a store website that has all the basic functionalities like displaying products, sorting, filtering, search, opinions, product page, adding products to the cart and ordering details. The website was created with the use of FakeStore API - so all products are pulled from the database.",
